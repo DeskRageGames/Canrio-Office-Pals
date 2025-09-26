@@ -123,9 +123,6 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
-<<<<<<< Updated upstream:Assets/Scenes/Tom's Workshop.unity
---- !u!1 &725361774
-=======
 --- !u!1 &23582038
 GameObject:
   m_ObjectHideFlags: 0
@@ -513,7 +510,6 @@ MonoBehaviour:
   timeBetweenDisplayChecks: 0.5
   displayCheckTimer: 0
 --- !u!1 &1012863380
->>>>>>> Stashed changes:Assets/Scenes/Build/Main Menu.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -521,9 +517,9 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 725361777}
-  - component: {fileID: 725361776}
-  - component: {fileID: 725361775}
+  - component: {fileID: 1012863383}
+  - component: {fileID: 1012863382}
+  - component: {fileID: 1012863381}
   m_Layer: 0
   m_Name: Main Camera
   m_TagString: MainCamera
@@ -531,21 +527,21 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!81 &725361775
+--- !u!81 &1012863381
 AudioListener:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725361774}
+  m_GameObject: {fileID: 1012863380}
   m_Enabled: 1
---- !u!20 &725361776
+--- !u!20 &1012863382
 Camera:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725361774}
+  m_GameObject: {fileID: 1012863380}
   m_Enabled: 1
   serializedVersion: 2
   m_ClearFlags: 1
@@ -590,13 +586,13 @@ Camera:
   m_OcclusionCulling: 1
   m_StereoConvergence: 10
   m_StereoSeparation: 0.022
---- !u!4 &725361777
+--- !u!4 &1012863383
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 725361774}
+  m_GameObject: {fileID: 1012863380}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
   m_LocalPosition: {x: 0, y: 1, z: -10}
@@ -605,9 +601,6 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
-<<<<<<< Updated upstream:Assets/Scenes/Tom's Workshop.unity
---- !u!1 &2145433936
-=======
 --- !u!1 &2033977553
 GameObject:
   m_ObjectHideFlags: 0
@@ -684,7 +677,6 @@ CanvasRenderer:
   m_GameObject: {fileID: 2033977553}
   m_CullTransparentMesh: 1
 --- !u!1 &2044636271
->>>>>>> Stashed changes:Assets/Scenes/Build/Main Menu.unity
 GameObject:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -692,8 +684,8 @@ GameObject:
   m_PrefabAsset: {fileID: 0}
   serializedVersion: 6
   m_Component:
-  - component: {fileID: 2145433938}
-  - component: {fileID: 2145433937}
+  - component: {fileID: 2044636273}
+  - component: {fileID: 2044636272}
   m_Layer: 0
   m_Name: Directional Light
   m_TagString: Untagged
@@ -701,13 +693,13 @@ GameObject:
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
   m_IsActive: 1
---- !u!108 &2145433937
+--- !u!108 &2044636272
 Light:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145433936}
+  m_GameObject: {fileID: 2044636271}
   m_Enabled: 1
   serializedVersion: 10
   m_Type: 1
@@ -763,13 +755,13 @@ Light:
   m_UseViewFrustumForShadowCasterCull: 1
   m_ShadowRadius: 0
   m_ShadowAngle: 0
---- !u!4 &2145433938
+--- !u!4 &2044636273
 Transform:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2145433936}
+  m_GameObject: {fileID: 2044636271}
   serializedVersion: 2
   m_LocalRotation: {x: 0.40821788, y: -0.23456968, z: 0.10938163, w: 0.8754261}
   m_LocalPosition: {x: 0, y: 3, z: 0}
@@ -813,14 +805,9 @@ Transform:
 SceneRoots:
   m_ObjectHideFlags: 0
   m_Roots:
-<<<<<<< Updated upstream:Assets/Scenes/Tom's Workshop.unity
-  - {fileID: 725361777}
-  - {fileID: 2145433938}
-=======
   - {fileID: 1012863383}
   - {fileID: 2044636273}
   - {fileID: 970523922}
   - {fileID: 430828678}
   - {fileID: 23582041}
   - {fileID: 2090511472}
->>>>>>> Stashed changes:Assets/Scenes/Build/Main Menu.unity
