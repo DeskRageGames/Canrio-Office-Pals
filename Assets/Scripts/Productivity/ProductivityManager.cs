@@ -30,8 +30,6 @@ public class ProductivityManager : MonoBehaviour
         if (timer >= 1 / ticksPerSecond)
         {
 
-            print(1 / ticksPerSecond);
-
             timer = 0;
             
             // Give Idle Monkey's a break
@@ -45,9 +43,13 @@ public class ProductivityManager : MonoBehaviour
                 if (currentTasks[i].WorkTask(ticksPerSecond))
                 {
 
+                    TaskManager.instance.FinishTask(currentTasks[i]);
+
+                    //remove monkey's from task
                     foreach(MonkeyStats workingMonkey in currentTasks[i].workingMonkeys)
                     {
                         idleMonkeys.Add(workingMonkey);
+                        //trigger monkey yippee and idle
                     }
 
                     currentTasks.RemoveAt(i);

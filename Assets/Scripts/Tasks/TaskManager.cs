@@ -9,6 +9,7 @@ public class TaskManager : MonoBehaviour
 
     public static TaskManager instance;
     public Transform[] taskLocations;
+    private List<Transform> taskPlacements = new();
     public GameObject taskPrefab;
     public int taskCount = 0;
 
@@ -52,9 +53,32 @@ public class TaskManager : MonoBehaviour
 
         generatedTask.progressBar = Instantiate(taskPrefab, taskLocations[taskCount]).GetComponent<TaskFiller>();
 
+        taskPlacements.Add(generatedTask.progressBar.transform);
+
         generatedTask.progressBar.LoadInfo(generatedTask);
 
         taskCount++;
+    }
+
+    public void FinishTask(Task task)
+    {
+
+        taskPlacements.Remove(task.progressBar.transform);
+        Destroy(task.progressBar.gameObject);
+
+        //gain reward for money and cinna points
+
+        taskCount--;
+        
+        for(int i = 0; i < taskPlacements.Count; i++)
+        {
+
+            taskPlacements[i].parent = taskLocations[i];
+
+        }
+
+        GenerateTask();
+
     }
 
 }
@@ -75,14 +99,15 @@ public class Task
     public int moneyReward;
     public int cinnaPoints;
 
-    public List<MonkeyStats> workingMonkeys;
+    public List<MonkeyStats> workingMonkeys = new();
 
     public bool WorkTask(float ticksPerSecond)
     {
         float productionTotal = 0;
 
-        foreach (MonkeyStats monkey in workingMonkeys)
-            productionTotal += monkey.WorkMonkey(ticksPerSecond);
+        if(workingMonkeys.Count > 0)
+            foreach (MonkeyStats monkey in workingMonkeys)
+                productionTotal += monkey.WorkMonkey(ticksPerSecond);
 
         return AddProductivity(productionTotal);
 

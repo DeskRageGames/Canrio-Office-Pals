@@ -247,8 +247,8 @@ MonoBehaviour:
   taskTitle: {fileID: 7286152325039817345}
   progress: {fileID: 571387763431163435}
   progressBar: {fileID: 3041153436889039700}
-  money: {fileID: 0}
-  cinnaPoints: {fileID: 0}
+  money: {fileID: 4062077235879265515}
+  cinnaPoints: {fileID: 1589113078303520685}
 --- !u!1 &1132797086210428320
 GameObject:
   m_ObjectHideFlags: 0
