@@ -18,7 +18,7 @@ public class Tile : MonoBehaviour
     {
         get
         {
-            if (_tiles != null)
+            if (_tiles != null && _tiles.Length == 4)
                 return _tiles;
             SetupTiles();
             return _tiles;
@@ -40,7 +40,9 @@ public class Tile : MonoBehaviour
         int zDirection = z < 0 ? 2 : 0;
         x = Mathf.Abs(x);
         z = Mathf.Abs(z);
-        for(int i = 0; i < x; i++)
+        Debug.Log(x);
+        Debug.Log(z);
+        for (int i = 0; i < x; i++)
         {
             Tile xTile = GetTileInLine(xDirection, i);
             if(xTile == null || xTile.isOccupied)
@@ -49,7 +51,7 @@ public class Tile : MonoBehaviour
             }
             for(int j = 0; j < z; j++)
             {
-                Tile zTile = GetTileInLine(zDirection, i);
+                Tile zTile = xTile.GetTileInLine(zDirection, j);
                 if (zTile == null || zTile.isOccupied)
                 {
                     return false;
