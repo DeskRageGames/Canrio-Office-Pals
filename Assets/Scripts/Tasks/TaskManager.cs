@@ -17,7 +17,7 @@ public class Task
 {
 
     public string taskName;
-    public string taskInfo;
+    public TaskFiller progressBar;
     public bool activity;
     public TaskDifficulty difficulty;
 
@@ -27,7 +27,6 @@ public class Task
     public int moneyReward;
     public int cinnaPoints;
 
-    public Image progressBar;
     public List<MonkeyStats> workingMonkeys;
 
     public bool WorkTask(float ticksPerSecond)
@@ -45,12 +44,10 @@ public class Task
 
         prodCurrent += production;
 
-        progressBar.fillAmount = prodCurrent / prodCost;
+        progressBar.ProgressGain(Mathf.RoundToInt(prodCurrent));
 
         if(prodCurrent >= prodCost)
         {
-
-            progressBar.fillAmount = 1;
 
             Debug.Log("Completed Task");
 

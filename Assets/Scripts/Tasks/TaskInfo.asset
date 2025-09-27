@@ -1,0 +1,44 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 307759d624c887c48b97f71dba121b99, type: 3}
+  m_Name: TaskInfo
+  m_EditorClassIdentifier: 
+  characterNames:
+  - IronMouse
+  - Bubi
+  - Sinnaroll
+  - Korone
+  - Hewwo Kitter
+  - Pompomery
+  - Chocodog
+  - Your Silence
+  - Twin Moons
+  - Potaco
+  - Your Bitter Violin
+  - Peter
+  - Chris Broad
+  - Gigguk
+  - CDawg
+  taskNames:
+  - Create PR Material for {0}
+  - Design new Outfit for {0}
+  - Deal with Taxes
+  - Find Additional Funding Methods
+  - Produce More {0} Merch
+  - Set up a collab for {0}
+  - Look for Additional Talent
+  - '{0}''s Concert Setup'
+  - Setup for a Con
+  - Create Video with {0}
+  - Edit Trailer for {0}
+  - Brand Deal for {0}
+  - Make {0} a TV Show
