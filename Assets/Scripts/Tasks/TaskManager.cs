@@ -1,13 +1,61 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
-using Unity.VisualScripting.FullSerializer;
 using UnityEngine;
 using UnityEngine.UI;
 
 public class TaskManager : MonoBehaviour
 {
 
+    public static TaskManager instance;
+    public Transform[] taskLocations;
+    public GameObject taskPrefab;
+    public int taskCount = 0;
 
+    public Vector2[] lowHighProd;
+    public Vector2[] lowHighMoney;
+    public Vector2[] lowHighCinna;
+
+    [SerializeField] TaskInfoHolder taskInfoHolder;
+
+    private void Awake()
+    {
+        
+        instance = this;
+
+    }
+
+    private void Start()
+    {
+
+        GenerateTask();
+
+    }
+
+    public void GenerateTask()
+    {
+
+        Task generatedTask = new Task();
+
+        //Generate Task name with a job and up to 1 character name
+        generatedTask.taskName = taskInfoHolder.CreateTaskName();
+
+        //Get difficulty and set numbers based on the difficulty levels
+        int difficultyIndex = Random.Range(0, 2);
+        generatedTask.difficulty = (TaskDifficulty)difficultyIndex;
+
+        generatedTask.prodCost = Random.Range((int)lowHighProd[difficultyIndex].x, (int)lowHighProd[difficultyIndex].y);
+        generatedTask.moneyReward = Random.Range((int)lowHighMoney[difficultyIndex].x, (int)lowHighMoney[difficultyIndex].y);
+        generatedTask.cinnaPoints = Random.Range((int)lowHighCinna[difficultyIndex].x, (int)lowHighCinna[difficultyIndex].y);
+
+        ProductivityManager.instance.currentTasks.Add(generatedTask);
+
+        generatedTask.progressBar = Instantiate(taskPrefab, taskLocations[taskCount]).GetComponent<TaskFiller>();
+
+        generatedTask.progressBar.LoadInfo(generatedTask);
+
+        taskCount++;
+    }
 
 }
 

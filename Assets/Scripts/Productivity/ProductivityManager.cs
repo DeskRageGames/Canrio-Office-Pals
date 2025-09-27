@@ -5,11 +5,19 @@ using UnityEngine;
 public class ProductivityManager : MonoBehaviour
 {
 
+    public static ProductivityManager instance;
+
     public float ticksPerSecond = 4;
     public List<Task> currentTasks = new();
     public List<MonkeyStats> idleMonkeys = new();
     private float timer;
     public bool isTesting = false;
+
+    private void Awake()
+    {
+        instance = this;
+    }
+
     private void Update()
     {
 
