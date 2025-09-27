@@ -29,15 +29,17 @@ public class MonkeyStats : MonoBehaviour
     public void StressChange(float stressRelief, bool percentage = false)
     {
 
+        //change stress growth based on objects nearby
         stressPerSecond += percentage ? stressRelief * stressPerSecond : stressRelief;
 
     }
 
-    public float WorkMonkey(int tickCount)
+    public float WorkMonkey(float tickCount)
     {
         //add up production over time
         float generatedProd = prodPerSecond / tickCount;
 
+        //apply debuff to production based on current stress
         float stressPercent = 1 - (currentStress / maxStress);
         if (stressPercent < 0.1f)
             stressPercent = 0.1f;
@@ -54,9 +56,11 @@ public class MonkeyStats : MonoBehaviour
 
     }
 
-    public void IdleMonkey(int tickCount)
+    public void IdleMonkey(float tickCount)
     {
 
+        //lower stress while idle
+        
         if(currentStress > 0)
             currentStress -= idleStressLower / tickCount;
         else
