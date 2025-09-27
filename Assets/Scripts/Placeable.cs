@@ -99,6 +99,7 @@ public class Placeable : MonoBehaviour
             yesPlace.SetActive(false);
             placedPlace.SetActive(true);
             OnPlaceObject.Invoke();
+            targetTile.PlaceObject(xTileSize, zTileSize);
             enabled = false;
         }
     }

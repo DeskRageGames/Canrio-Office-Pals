@@ -127,6 +127,36 @@ public class Tile : MonoBehaviour
         }
     }
 
+    internal void PlaceObject(int x, int z)
+    {
+        if (x == 0 || z == 0)
+            return;
+        int xDirection = x < 0 ? 3 : 1;
+        int zDirection = z < 0 ? 2 : 0;
+        x = Mathf.Abs(x);
+        z = Mathf.Abs(z);
+        for (int i = 0; i < x; i++)
+        {
+            Tile xTile = GetTileInLine(xDirection, i);
+            if (xTile == null || xTile.isOccupied)
+            {
+                Debug.LogError("Attempted Illegal Placement");
+                return;
+            }
+            for (int j = 0; j < z; j++)
+            {
+                Tile zTile = xTile.GetTileInLine(zDirection, j);
+                if (zTile == null || zTile.isOccupied)
+                {
+                    Debug.LogError("Attempted Illegal Placement");
+                    return;
+                }
+                zTile.isOccupied = true;
+            }
+            xTile.isOccupied = true;
+        }
+    }
+
     // Start is called before the first frame update
     void Start()
     {
