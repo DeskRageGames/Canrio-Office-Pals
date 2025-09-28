@@ -26,7 +26,7 @@ Transform:
   m_GameObject: {fileID: 8281125147513247472}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
-  m_LocalPosition: {x: -15.66, y: 0, z: -22.09}
+  m_LocalPosition: {x: 19.149593, y: 24.81181, z: 21.797525}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -58,9 +58,17 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 617718101485716643}
     m_Modifications:
+    - target: {fileID: 2375483327420075300, guid: 0dcc6018d3258ae4697f550cbf16741c, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
     - target: {fileID: 4748685243471778399, guid: 0dcc6018d3258ae4697f550cbf16741c, type: 3}
       propertyPath: m_Name
       value: Office
+      objectReference: {fileID: 0}
+    - target: {fileID: 6303032373088442934, guid: 0dcc6018d3258ae4697f550cbf16741c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 8443681792079727074, guid: 0dcc6018d3258ae4697f550cbf16741c, type: 3}
       propertyPath: m_LocalPosition.x

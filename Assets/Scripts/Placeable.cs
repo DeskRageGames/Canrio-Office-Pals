@@ -5,7 +5,7 @@ using UnityEngine.Events;
 
 public class Placeable : MonoBehaviour
 {
-    internal UnityEvent OnPlaceObject;
+    public UnityEvent OnPlaceObject;
 
     [SerializeField] int xTileSize = 1, zTileSize = 1;
     bool rotationTracker;

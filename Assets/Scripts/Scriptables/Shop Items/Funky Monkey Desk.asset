@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 53647f93aab03bd4aacf87889ce6cf27, type: 3}
   m_Name: Funky Monkey Desk
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 0}
+  itemPrefab: {fileID: 8281125147513247472, guid: 5abe15290c2fb2c4c98ee576953515cf, type: 3}
   type: 1
   icon: {fileID: 21300000, guid: de607a78ee4b76b43b94a6eef50a9102, type: 3}
   cost: -3

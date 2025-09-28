@@ -47,7 +47,7 @@ public class ObjectPlacer : MonoBehaviour
         {
             Debug.LogError("Object Placer Requires a camera");
         }
-        HandlePlacement(placeable);
+        if(placeable != null) HandlePlacement(placeable);
     }
 
     // Update is called once per frame

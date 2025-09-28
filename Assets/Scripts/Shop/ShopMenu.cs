@@ -27,6 +27,7 @@ public class ShopMenu : MonoBehaviour
     [SerializeField] private GameObject menuPopup;
     [SerializeField] private Transform categoriesParent;
     [SerializeField] private Transform contentParent;
+    [SerializeField] private Transform placeAblesParent;
 
     [SerializeField] private GameObject categoryButtonPrefab;
     [SerializeField] private GameObject contentButtonPrefab;
@@ -141,8 +142,9 @@ public class ShopMenu : MonoBehaviour
             UpdateButtonPurchasable();
         
             ToggleShopMenu(false);
-            
-            ObjectPlacer.instance.HandlePlacement(availableItems[index].itemPrefab.GetComponent<Placeable>());
+
+            Placeable placeable = Instantiate(availableItems[index].itemPrefab).GetComponent<Placeable>();
+            ObjectPlacer.instance.HandlePlacement(placeable);
         }
 
     }
