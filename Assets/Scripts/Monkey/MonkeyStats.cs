@@ -17,6 +17,15 @@ public class MonkeyStats : MonoBehaviour
     [SerializeField] bool idle = false;
     [SerializeField] bool testing = false;
 
+    private MonkeyController monkeyController;
+
+    private void Start()
+    {
+        
+        monkeyController = GetComponent<MonkeyController>();
+
+    }
+
     public void UpgradeMonkey()
     {
 
