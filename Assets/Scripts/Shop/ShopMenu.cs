@@ -134,5 +134,7 @@ public class ShopMenu : MonoBehaviour
     {
         ResourceBank.instance.TrySpendResource(availableItems[index].costType, availableItems[index].cost);
         UpdateButtonPurchasable();
+        
+        Debug.LogWarning("Not implemented: Send Object Data To Object Placer and Close Menu" );
     }
 }
