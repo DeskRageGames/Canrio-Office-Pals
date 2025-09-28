@@ -22,8 +22,9 @@ public class ShopMenu : MonoBehaviour
     [Header("Settings")]
     [SerializeField] private float updateButtonsTime = 1f;
     private float updateButtonsTimer;
-    
-    [Header("References")]
+
+    [Header("References")] 
+    [SerializeField] private GameObject menuPopup;
     [SerializeField] private Transform categoriesParent;
     [SerializeField] private Transform contentParent;
 
@@ -134,5 +135,13 @@ public class ShopMenu : MonoBehaviour
     {
         ResourceBank.instance.TrySpendResource(availableItems[index].costType, availableItems[index].cost);
         UpdateButtonPurchasable();
+        
+        ToggleShopMenu(false);
+    }
+
+    public void ToggleShopMenu(bool open)
+    {
+        menuPopup.SetActive(open);
+        if (open) UpdateButtonPurchasable();
     }
 }
