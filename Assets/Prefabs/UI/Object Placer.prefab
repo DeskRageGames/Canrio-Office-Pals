@@ -374,7 +374,7 @@ MonoBehaviour:
   bottomBar: {fileID: 7171150546148684307}
   tileLayer:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 8
 --- !u!1 &5098767040562578046
 GameObject:
   m_ObjectHideFlags: 0
