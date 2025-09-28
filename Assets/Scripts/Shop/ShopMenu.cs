@@ -35,6 +35,8 @@ public class ShopMenu : MonoBehaviour
     
     private float updateButtonsTimer;
     private List<ShopContentUiReferencePasser> contentSlots;
+
+    private ShopItemScriptable itemToRefund;
     
 
     private void Start()
@@ -145,6 +147,7 @@ public class ShopMenu : MonoBehaviour
 
             Placeable placeable = Instantiate(availableItems[index].itemPrefab).GetComponent<Placeable>();
             ObjectPlacer.instance.HandlePlacement(placeable);
+            itemToRefund = availableItems[index];
         }
 
     }
@@ -153,5 +156,16 @@ public class ShopMenu : MonoBehaviour
     {
         menuPopup.SetActive(open);
         if (open) UpdateButtonPurchasable();
+    }
+
+    public void Refund()
+    {
+        if (itemToRefund == null)
+        {
+            Debug.LogWarning("Tried to refund no item");
+            return;
+        }
+        ResourceBank.instance.AddResource(itemToRefund.costType, itemToRefund.cost);
+        itemToRefund = null;
     }
 }
