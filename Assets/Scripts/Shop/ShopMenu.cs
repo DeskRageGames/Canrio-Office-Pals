@@ -27,6 +27,7 @@ public class ShopMenu : MonoBehaviour
     [SerializeField] private GameObject menuPopup;
     [SerializeField] private Transform categoriesParent;
     [SerializeField] private Transform contentParent;
+    [SerializeField] private Transform placeAblesParent;
 
     [SerializeField] private GameObject categoryButtonPrefab;
     [SerializeField] private GameObject contentButtonPrefab;
@@ -136,10 +137,16 @@ public class ShopMenu : MonoBehaviour
 
     public void AttemptPurchase(int index)
     {
-        ResourceBank.instance.TrySpendResource(availableItems[index].costType, availableItems[index].cost);
-        UpdateButtonPurchasable();
+        if (ResourceBank.instance.TrySpendResource(availableItems[index].costType, availableItems[index].cost))
+        {
+            UpdateButtonPurchasable();
         
-        ToggleShopMenu(false);
+            ToggleShopMenu(false);
+
+            Placeable placeable = Instantiate(availableItems[index].itemPrefab).GetComponent<Placeable>();
+            ObjectPlacer.instance.HandlePlacement(placeable);
+        }
+
     }
 
     public void ToggleShopMenu(bool open)

@@ -10,7 +10,7 @@ public class Tile : MonoBehaviour
 
     
     public static float tileScale = 3f;
-
+    
     public bool isOccupied;
     [SerializeField] Tile[] _tiles;
     //tiles[0] is forwards, tiles[1] is rightwards, tiles[2] is backwards, tiles[3] is leftwards (or North East South West if you think as I do)
@@ -18,7 +18,7 @@ public class Tile : MonoBehaviour
     {
         get
         {
-            if (_tiles != null)
+            if (_tiles != null && _tiles.Length == 4)
                 return _tiles;
             SetupTiles();
             return _tiles;
@@ -40,7 +40,9 @@ public class Tile : MonoBehaviour
         int zDirection = z < 0 ? 2 : 0;
         x = Mathf.Abs(x);
         z = Mathf.Abs(z);
-        for(int i = 0; i < x; i++)
+        Debug.Log(x);
+        Debug.Log(z);
+        for (int i = 0; i < x; i++)
         {
             Tile xTile = GetTileInLine(xDirection, i);
             if(xTile == null || xTile.isOccupied)
@@ -49,7 +51,7 @@ public class Tile : MonoBehaviour
             }
             for(int j = 0; j < z; j++)
             {
-                Tile zTile = GetTileInLine(zDirection, i);
+                Tile zTile = xTile.GetTileInLine(zDirection, j);
                 if (zTile == null || zTile.isOccupied)
                 {
                     return false;
@@ -122,6 +124,36 @@ public class Tile : MonoBehaviour
         {
             if (hit.TryGetComponent<Tile>(out _tiles[3]))
                 break;
+        }
+    }
+
+    internal void PlaceObject(int x, int z)
+    {
+        if (x == 0 || z == 0)
+            return;
+        int xDirection = x < 0 ? 3 : 1;
+        int zDirection = z < 0 ? 2 : 0;
+        x = Mathf.Abs(x);
+        z = Mathf.Abs(z);
+        for (int i = 0; i < x; i++)
+        {
+            Tile xTile = GetTileInLine(xDirection, i);
+            if (xTile == null || xTile.isOccupied)
+            {
+                Debug.LogError("Attempted Illegal Placement");
+                return;
+            }
+            for (int j = 0; j < z; j++)
+            {
+                Tile zTile = xTile.GetTileInLine(zDirection, j);
+                if (zTile == null || zTile.isOccupied)
+                {
+                    Debug.LogError("Attempted Illegal Placement");
+                    return;
+                }
+                zTile.isOccupied = true;
+            }
+            xTile.isOccupied = true;
         }
     }
 
