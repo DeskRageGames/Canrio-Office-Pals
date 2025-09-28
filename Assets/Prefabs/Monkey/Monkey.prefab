@@ -11,9 +11,9 @@ GameObject:
   - component: {fileID: 7017764898745971734}
   - component: {fileID: 4568378409910984259}
   - component: {fileID: 7148507969341622187}
-  - component: {fileID: 2657089147423395486}
   - component: {fileID: 4004833619551705843}
   - component: {fileID: -2352522167588155749}
+  - component: {fileID: 7579278353510268995}
   m_Layer: 0
   m_Name: Monkey
   m_TagString: Untagged
@@ -87,29 +87,6 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!136 &2657089147423395486
-CapsuleCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 7162928104200857365}
-  m_Material: {fileID: 0}
-  m_IncludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_ExcludeLayers:
-    serializedVersion: 2
-    m_Bits: 0
-  m_LayerOverridePriority: 0
-  m_IsTrigger: 0
-  m_ProvidesContacts: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Radius: 0.5
-  m_Height: 2
-  m_Direction: 1
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &4004833619551705843
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -143,6 +120,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: af6034b29bd404f15817725dacdad10f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  myMode: 0
+--- !u!65 &7579278353510268995
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7162928104200857365}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5, y: 3, z: 5}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &3147373137421412596
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -4,6 +4,7 @@ using TMPro;
 using UnityEditor.VersionControl;
 using UnityEngine;
 using UnityEngine.UI;
+using UnityEngine.EventSystems;
 
 public class JobSelector : MonoBehaviour
 {
@@ -14,6 +15,8 @@ public class JobSelector : MonoBehaviour
 
     private MonkeyStats selectedMonkey;
 
+    bool selectionOpen = false;
+
     private void Awake()
     {
         instance = this;
@@ -22,7 +25,9 @@ public class JobSelector : MonoBehaviour
     public void OpenJobSelector(MonkeyStats jobSeeker)
     {
 
-        jobSeeker = selectedMonkey;
+        selectionOpen = true;
+
+        selectedMonkey = jobSeeker;
 
         List<Task> tasks = new List<Task>(ProductivityManager.instance.currentTasks);
 
@@ -61,13 +66,46 @@ public class JobSelector : MonoBehaviour
     {
 
         ProductivityManager.instance.SetMonkeyToTask(selectedMonkey, taskIndex);
-        transform.GetChild (0).gameObject.SetActive(false);
+
+        Close();
+
+    }
+
+    public void Close()
+    {
+
+        transform.GetChild(0).gameObject.SetActive(false);
 
         foreach (ButtonInfo button in taskButtons)
             button.mainObject.SetActive(false);
 
+        selectionOpen = false;
+
     }
 
+    private void Update()
+    {
+        if (Input.GetMouseButtonDown(0))
+        {
+
+            Ray direction = Camera.main.ScreenPointToRay(Input.mousePosition);
+
+            RaycastHit hit;
+
+            if (Physics.Raycast(direction, out hit))
+            {
+
+                if (hit.collider.gameObject.TryGetComponent<MonkeyController>(out MonkeyController controller))
+                    controller.OpenJobSelection();
+
+            }
+        }
+    }
+
+    public void OnPointerUp(PointerEventData eventData)
+    {
+
+    }
 }
 
 [System.Serializable]

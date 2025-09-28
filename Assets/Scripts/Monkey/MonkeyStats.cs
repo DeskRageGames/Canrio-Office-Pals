@@ -71,7 +71,7 @@ public class MonkeyStats : MonoBehaviour
 
         //lower stress while idle
 
-        monkeyController.ChangeMood(MonkeyMode.idle);
+        monkeyController.ChangeMood(MonkeyMode.sleeping);
 
         if(currentStress > 0)
             currentStress -= idleStressLower / tickCount;

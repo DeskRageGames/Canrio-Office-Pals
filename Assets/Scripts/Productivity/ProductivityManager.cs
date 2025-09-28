@@ -21,9 +21,6 @@ public class ProductivityManager : MonoBehaviour
     private void Update()
     {
 
-        if (!isTesting)
-            return;
-
         timer += Time.deltaTime;
 
         //running checks timed based on the ticks Per second
