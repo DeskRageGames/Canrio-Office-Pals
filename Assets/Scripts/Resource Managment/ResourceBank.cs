@@ -78,11 +78,16 @@ public class ResourceBank : MonoBehaviour
         }
     }
 
-    public void TrySpendResource(ResourceScriptable resourceScriptable, float amount)
+    public bool TrySpendResource(ResourceScriptable resourceScriptable, float amount)
     {
         if (CanAfford(resourceScriptable, amount))
         {
             SpendResource(resourceScriptable, amount);
+            return true;
+        }
+        else
+        {
+            return false;
         }
     }
 

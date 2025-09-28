@@ -136,10 +136,15 @@ public class ShopMenu : MonoBehaviour
 
     public void AttemptPurchase(int index)
     {
-        ResourceBank.instance.TrySpendResource(availableItems[index].costType, availableItems[index].cost);
-        UpdateButtonPurchasable();
+        if (ResourceBank.instance.TrySpendResource(availableItems[index].costType, availableItems[index].cost))
+        {
+            UpdateButtonPurchasable();
         
-        ToggleShopMenu(false);
+            ToggleShopMenu(false);
+            
+            ObjectPlacer.instance.HandlePlacement(availableItems[index].itemPrefab.GetComponent<Placeable>());
+        }
+
     }
 
     public void ToggleShopMenu(bool open)
