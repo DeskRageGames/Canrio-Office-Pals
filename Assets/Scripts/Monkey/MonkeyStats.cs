@@ -60,6 +60,7 @@ public class MonkeyStats : MonoBehaviour
         else if (currentStress > maxStress)
             currentStress = maxStress;
 
+        monkeyController.CheckWorkMood();
 
         return generatedProd * stressPercent;
 
@@ -69,7 +70,9 @@ public class MonkeyStats : MonoBehaviour
     {
 
         //lower stress while idle
-        
+
+        monkeyController.ChangeMood(MonkeyMode.idle);
+
         if(currentStress > 0)
             currentStress -= idleStressLower / tickCount;
         else

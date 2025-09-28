@@ -1,3 +1,4 @@
+using JetBrains.Annotations;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -9,7 +10,6 @@ public class MonkeyController : MonoBehaviour
     public MonkeyMode myMode = MonkeyMode.idle;
     private Animator myAnimator;
 
-
     void Start()
     {
         
@@ -18,10 +18,21 @@ public class MonkeyController : MonoBehaviour
 
     }
 
-    private void FixedUpdate()
+    public void CheckWorkMood()
     {
 
-        myAnimator.SetInteger("MoodIndicator", (int)myMode);
+        if(monkeyStats.currentStress > 70)
+        {
+
+            ChangeMood(MonkeyMode.angry);
+
+        }
+        else
+        {
+
+            ChangeMood(MonkeyMode.typing);
+
+        }
 
     }
 
@@ -30,8 +41,16 @@ public class MonkeyController : MonoBehaviour
 
         myMode = mood;
 
+        myAnimator.SetInteger("MoodIndicator", (int)myMode);
+
     }
 
+    public void OpenJobSelection()
+    {
+
+        JobSelector.instance.OpenJobSelector(monkeyStats);
+
+    }
 }
 
 public enum MonkeyMode
