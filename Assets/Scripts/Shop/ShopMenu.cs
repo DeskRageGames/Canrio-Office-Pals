@@ -17,19 +17,23 @@ public class ShopMenu : MonoBehaviour
 {
     public ShopItemScriptable[] availableItems;
     [SerializeField] private ItemCategory[] categories;
-    [SerializeField] private List<ShopContentUiReferencePasser> contentSlots;
+
 
     [Header("Settings")]
     [SerializeField] private float updateButtonsTime = 1f;
-    private float updateButtonsTimer;
-    
-    [Header("References")]
+  
+
+    [Header("References")] 
+    [SerializeField] private GameObject menuPopup;
     [SerializeField] private Transform categoriesParent;
     [SerializeField] private Transform contentParent;
 
     [SerializeField] private GameObject categoryButtonPrefab;
     [SerializeField] private GameObject contentButtonPrefab;
     [SerializeField] private GameObject contentHorizontalLayoutPrefab;
+    
+    private float updateButtonsTimer;
+    private List<ShopContentUiReferencePasser> contentSlots;
     
 
     private void Start()
@@ -135,6 +139,12 @@ public class ShopMenu : MonoBehaviour
         ResourceBank.instance.TrySpendResource(availableItems[index].costType, availableItems[index].cost);
         UpdateButtonPurchasable();
         
-        Debug.LogWarning("Not implemented: Send Object Data To Object Placer and Close Menu" );
+        ToggleShopMenu(false);
+    }
+
+    public void ToggleShopMenu(bool open)
+    {
+        menuPopup.SetActive(open);
+        if (open) UpdateButtonPurchasable();
     }
 }
