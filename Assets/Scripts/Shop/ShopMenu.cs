@@ -17,11 +17,11 @@ public class ShopMenu : MonoBehaviour
 {
     public ShopItemScriptable[] availableItems;
     [SerializeField] private ItemCategory[] categories;
-    [SerializeField] private List<ShopContentUiReferencePasser> contentSlots;
+
 
     [Header("Settings")]
     [SerializeField] private float updateButtonsTime = 1f;
-    private float updateButtonsTimer;
+  
 
     [Header("References")] 
     [SerializeField] private GameObject menuPopup;
@@ -31,6 +31,9 @@ public class ShopMenu : MonoBehaviour
     [SerializeField] private GameObject categoryButtonPrefab;
     [SerializeField] private GameObject contentButtonPrefab;
     [SerializeField] private GameObject contentHorizontalLayoutPrefab;
+    
+    private float updateButtonsTimer;
+    private List<ShopContentUiReferencePasser> contentSlots;
     
 
     private void Start()
