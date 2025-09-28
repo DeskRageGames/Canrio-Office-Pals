@@ -5,15 +5,12 @@ using UnityEngine.Events;
 
 public class Placeable : MonoBehaviour
 {
-#if UNITY_EDITOR
-    [SerializeField] bool forceRotate = false;
-#endif
-    [SerializeField] internal UnityEvent OnPlaceObject;
+    internal UnityEvent OnPlaceObject;
 
     [SerializeField] int xTileSize = 1, zTileSize = 1;
-    [SerializeField] bool rotationTracker;
+    bool rotationTracker;
     [SerializeField] GameObject noPlace, yesPlace, placedPlace;
-    [SerializeField] Tile targetTile;
+    Tile targetTile;
     // Start is called before the first frame update
     void Start()
     {
@@ -23,13 +20,7 @@ public class Placeable : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-#if UNITY_EDITOR
-        if (forceRotate)
-        {
-            Rotate();
-            forceRotate = false;
-        }
-#endif
+
     }
 
     internal void SetTarget(Tile tile)

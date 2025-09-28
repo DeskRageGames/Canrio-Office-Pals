@@ -1,13 +1,27 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Events;
 
 public class ObjectPlacer : MonoBehaviour
 {
+    static ObjectPlacer _instance;
+    public static ObjectPlacer instance
+    {
+        get
+        {
+            if(_instance == null)
+            {
+                _instance = Camera.main.gameObject.AddComponent<ObjectPlacer>();
+            }
+            return _instance;
+        }
+    }
+
 
     public Placeable placeable;
     [SerializeField] Camera cam;
-
+    [SerializeField] public UnityEvent OnFinishPlacing;
     bool targetChanged = false;
     Tile _target;
     Tile target
@@ -68,7 +82,18 @@ public class ObjectPlacer : MonoBehaviour
         }
     }
 
-    void HandlePlacement(Placeable placeMe)
+    public void Rotate()
+    {
+        placeable.Rotate();
+    }
+
+    public void Cancel()
+    {
+        Destroy(placeable.gameObject);
+        OnFinishPlacing.Invoke();
+    }
+
+    public void HandlePlacement(Placeable placeMe)
     {
         placeable = placeMe;
         placeable.OnPlaceObject.AddListener(FinishedPlacement);
@@ -78,5 +103,6 @@ public class ObjectPlacer : MonoBehaviour
     void FinishedPlacement()
     {
         placeable = null;
+        OnFinishPlacing.Invoke();
     }
 }
