@@ -21,7 +21,7 @@ public class ObjectPlacer : MonoBehaviour
 
     public Placeable placeable;
     [SerializeField] Camera cam;
-    [SerializeField] public UnityEvent OnFinishPlacing;
+    public UnityEvent OnFinishPlacing;
     bool targetChanged = false;
     Tile _target;
     Tile target
@@ -48,6 +48,8 @@ public class ObjectPlacer : MonoBehaviour
             Debug.LogError("Object Placer Requires a camera");
         }
         if(placeable != null) HandlePlacement(placeable);
+
+        OnFinishPlacing = new UnityEvent();
     }
 
     // Update is called once per frame

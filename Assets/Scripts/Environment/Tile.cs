@@ -10,7 +10,7 @@ public class Tile : MonoBehaviour
 
     
     public static float tileScale = 3f;
-
+    
     public bool isOccupied;
     [SerializeField] Tile[] _tiles;
     //tiles[0] is forwards, tiles[1] is rightwards, tiles[2] is backwards, tiles[3] is leftwards (or North East South West if you think as I do)
