@@ -85,10 +85,10 @@ public class JobSelector : MonoBehaviour
 
     private void Update()
     {
-        if (Input.GetMouseButtonDown(0))
+        if (Input.GetMouseButtonDown(0) || Input.touchCount > 0 && Input.touches[0].phase == TouchPhase.Began)
         {
 
-            Ray direction = Camera.main.ScreenPointToRay(Input.mousePosition);
+            Ray direction = Camera.main.ScreenPointToRay( Input.touchCount > 0 ? Input.touches[0].position : Input.mousePosition);
 
             RaycastHit hit;
 

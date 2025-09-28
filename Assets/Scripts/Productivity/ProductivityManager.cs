@@ -18,7 +18,7 @@ public class ProductivityManager : MonoBehaviour
         instance = this;
     }
 
-    private void Update()
+    private void FixedUpdate()
     {
 
         timer += Time.deltaTime;
