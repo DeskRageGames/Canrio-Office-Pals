@@ -6,5 +6,5 @@ using UnityEngine;
 public class ResourceScriptable : ScriptableObject
 {
     public Sprite icon;
-    public int displayOrderPriority = 0;
+    public int displayOrderIndex = 0;
 }

@@ -20,6 +20,7 @@ public class ResourceDisplay : MonoBehaviour
     private void Start()
     {
         bank = ResourceBank.instance;
+        bank.onSpendMoneyResource.AddListener( delegate(ResourceClass resource) { DisplayResources(); });
     }
 
     private void Update()
@@ -34,7 +35,7 @@ public class ResourceDisplay : MonoBehaviour
 
     private void DisplayResources()
     {
-        if (bank.Resources.Length != displaySlots.Length)
+        if (bank.Resources.Count != displaySlots.Length)
         {
             DestroyResourceDisplay();
             CreateResourceDisplay();
@@ -58,9 +59,9 @@ public class ResourceDisplay : MonoBehaviour
 
     private void CreateResourceDisplay()
     {
-        displaySlots = new ResourceDisplaySlot[bank.Resources.Length];
+        displaySlots = new ResourceDisplaySlot[bank.Resources.Count];
 
-        for (int i = 0; i < bank.Resources.Length; i++)
+        for (int i = 0; i < bank.Resources.Count; i++)
         {
             displaySlots[i] = Instantiate(displaySlotPrefab, resourceDisplayParent).GetComponent<ResourceDisplaySlot>();
             displaySlots[i].iconImage.sprite = bank.Resources[i].scriptable.icon;
