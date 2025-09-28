@@ -99,7 +99,7 @@ MonoBehaviour:
   - {fileID: 7166202167712009862}
   - {fileID: 3488310114305863908}
   - {fileID: 8380998316710431405}
-  taskPrefab: {fileID: 926367862313284977, guid: 4e807f0668445d44eb899731e11b5578, type: 3}
+  taskPrefab: {fileID: 3359215554038283359, guid: 4e807f0668445d44eb899731e11b5578, type: 3}
   taskCount: 0
   lowHighProd:
   - {x: 50, y: 150}
