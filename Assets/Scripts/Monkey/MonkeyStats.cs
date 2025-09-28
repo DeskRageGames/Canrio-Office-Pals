@@ -23,6 +23,7 @@ public class MonkeyStats : MonoBehaviour
     {
         
         monkeyController = GetComponent<MonkeyController>();
+        ProductivityManager.instance.SetMonkeyToTask(this, -1);
 
     }
 
