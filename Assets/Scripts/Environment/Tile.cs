@@ -9,7 +9,7 @@ public class Tile : MonoBehaviour
 #endif
 
     
-    public static float tileScale = 2f;
+    public static float tileScale = 3f;
 
     public bool isOccupied;
     [SerializeField] Tile[] _tiles;
