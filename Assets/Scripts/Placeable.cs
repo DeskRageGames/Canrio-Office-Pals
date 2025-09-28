@@ -32,7 +32,7 @@ public class Placeable : MonoBehaviour
         }
         else
         {
-            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Camera.main.transform.forward*10f;
+            transform.position = Camera.main.ScreenToWorldPoint(Input.mousePosition) + Camera.main.transform.forward * 10f;
         }
         ValidateTilePlacement();
     }
@@ -60,6 +60,7 @@ public class Placeable : MonoBehaviour
         }
 
         rotationTracker = !rotationTracker;
+        ValidateTilePlacement();
     }
 
     internal void ValidateTilePlacement()
@@ -85,7 +86,7 @@ public class Placeable : MonoBehaviour
 
     internal void FinishPlace()
     {
-        if(yesPlace.activeSelf)
+        if (yesPlace.activeSelf)
         {
             yesPlace.SetActive(false);
             placedPlace.SetActive(true);
@@ -95,5 +96,5 @@ public class Placeable : MonoBehaviour
         }
     }
 
-    
+
 }
