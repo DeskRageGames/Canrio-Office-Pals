@@ -9,8 +9,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 98406e2d44b6f3b48bee5492ded88609, type: 3}
-  m_Name: Money
+  m_Script: {fileID: 11500000, guid: 53647f93aab03bd4aacf87889ce6cf27, type: 3}
+  m_Name: Funky Monkey Desk
   m_EditorClassIdentifier: 
+  itemPrefab: {fileID: 0}
+  type: 1
   icon: {fileID: 21300000, guid: de607a78ee4b76b43b94a6eef50a9102, type: 3}
-  displayOrderPriority: 0
+  cost: -3
+  costType: {fileID: 11400000, guid: 223558ca092e87542a943d5eb0304ffa, type: 2}
