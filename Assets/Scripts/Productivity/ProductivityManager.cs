@@ -50,9 +50,12 @@ public class ProductivityManager : MonoBehaviour
                         idleMonkeys.Add(workingMonkey);
                         //trigger monkey yippee and idle
 
-                        ResourceBank.instance.AddResource(ResourceBank.instance.Resources[0].scriptable, currentTasks[i].moneyReward);
-
                     }
+
+
+                    //get paid
+                    ResourceBank.instance.AddResource(ResourceBank.instance.Resources[0].scriptable, currentTasks[i].moneyReward);
+                    ResourceBank.instance.AddResource(ResourceBank.instance.Resources[1].scriptable, currentTasks[i].cinnaPoints);
 
                     currentTasks.RemoveAt(i);
                     i--;

@@ -63,6 +63,8 @@ public class MonkeyStats : MonoBehaviour
                 stressReduce *= reducer.stressReduction;
         }
 
+        //print(stressReduce);
+
         //manage Stress While working
         currentStress += stressPerSecond * stressReduce / tickCount;
         if (currentStress < 0)
