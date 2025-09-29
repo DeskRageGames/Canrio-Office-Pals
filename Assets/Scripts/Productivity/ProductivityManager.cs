@@ -45,8 +45,13 @@ public class ProductivityManager : MonoBehaviour
                     //remove monkey's from task
                     foreach(MonkeyStats workingMonkey in currentTasks[i].workingMonkeys)
                     {
+                        workingMonkey.GetComponent<MonkeyController>().ChangeMood(MonkeyMode.Yippee);
+
                         idleMonkeys.Add(workingMonkey);
                         //trigger monkey yippee and idle
+
+                        ResourceBank.instance.AddResource(ResourceBank.instance.Resources[0].scriptable, currentTasks[i].moneyReward);
+
                     }
 
                     currentTasks.RemoveAt(i);
