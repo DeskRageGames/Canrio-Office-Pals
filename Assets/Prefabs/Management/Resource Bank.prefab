@@ -49,6 +49,10 @@ MonoBehaviour:
     amount: 50
     previousAmount: 0
     gainedLastTimeframe: 0
+  - scriptable: {fileID: 11400000, guid: 62a896e262e9b44fea74a5d231a071a0, type: 2}
+    amount: 0
+    previousAmount: 0
+    gainedLastTimeframe: 0
   timeBetweenGainChecks: 1
   gainCheckTimer: 0
   onSpendMoneyResource:

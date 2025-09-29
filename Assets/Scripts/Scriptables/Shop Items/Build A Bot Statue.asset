@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53647f93aab03bd4aacf87889ce6cf27, type: 3}
-  m_Name: Funky Monkey Desk
+  m_Name: Build A Bot Statue
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 8281125147513247472, guid: 5abe15290c2fb2c4c98ee576953515cf, type: 3}
+  itemPrefab: {fileID: 7495738355481527932, guid: b186d3ed4715b47b3b40f765d1bcf7ef, type: 3}
   type: 1
   icon: {fileID: 21300000, guid: de607a78ee4b76b43b94a6eef50a9102, type: 3}
-  cost: -3
+  cost: -40
   costType: {fileID: 11400000, guid: 223558ca092e87542a943d5eb0304ffa, type: 2}

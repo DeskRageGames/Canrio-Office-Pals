@@ -1,0 +1,154 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &8281125147513247472
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 617718101485716643}
+  - component: {fileID: 4261585551136113592}
+  - component: {fileID: 6422241420404908873}
+  m_Layer: 0
+  m_Name: Placeable Office cinnaroll
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &617718101485716643
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281125147513247472}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 1, z: 0, w: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children:
+  - {fileID: 2083898999363281827}
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 180, z: 0}
+--- !u!114 &4261585551136113592
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281125147513247472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c80c209ada9938646b56e54661dc12b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  OnPlaceObject:
+    m_PersistentCalls:
+      m_Calls: []
+  xTileSize: 1
+  zTileSize: 2
+  noPlace: {fileID: 9089845106453770393}
+  yesPlace: {fileID: 713841246839074608}
+  placedPlace: {fileID: 7516720522636268918}
+--- !u!114 &6422241420404908873
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8281125147513247472}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 82066ec843b674b2e9a6e0e0eaa51cc2, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  stressReduction: 0.9
+--- !u!1001 &7877887962309214714
+PrefabInstance:
+  m_ObjectHideFlags: 0
+  serializedVersion: 2
+  m_Modification:
+    serializedVersion: 3
+    m_TransformParent: {fileID: 617718101485716643}
+    m_Modifications:
+    - target: {fileID: 361167723748381836, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 1402445404577706339, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_IsActive
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 4152776983529566002, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_Name
+      value: Small Desk (cinnaroll)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalPosition.y
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalPosition.z
+      value: -1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalRotation.w
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalRotation.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalRotation.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalRotation.z
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+      propertyPath: m_LocalEulerAnglesHint.z
+      value: 0
+      objectReference: {fileID: 0}
+    m_RemovedComponents: []
+    m_RemovedGameObjects: []
+    m_AddedGameObjects: []
+    m_AddedComponents: []
+  m_SourcePrefab: {fileID: 100100000, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+--- !u!1 &713841246839074608 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7258662990182428362, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+  m_PrefabInstance: {fileID: 7877887962309214714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!4 &2083898999363281827 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8194473544161387097, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+  m_PrefabInstance: {fileID: 7877887962309214714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &7516720522636268918 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 361167723748381836, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+  m_PrefabInstance: {fileID: 7877887962309214714}
+  m_PrefabAsset: {fileID: 0}
+--- !u!1 &9089845106453770393 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 1402445404577706339, guid: c06dad64846fea4469959e4687cafa64, type: 3}
+  m_PrefabInstance: {fileID: 7877887962309214714}
+  m_PrefabAsset: {fileID: 0}

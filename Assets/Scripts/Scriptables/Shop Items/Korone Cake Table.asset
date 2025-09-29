@@ -10,10 +10,10 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 53647f93aab03bd4aacf87889ce6cf27, type: 3}
-  m_Name: Standard Monkey Desk
+  m_Name: Korone Cake Table
   m_EditorClassIdentifier: 
-  itemPrefab: {fileID: 8281125147513247472, guid: 5abe15290c2fb2c4c98ee576953515cf, type: 3}
-  type: 0
-  icon: {fileID: 21300000, guid: 959014f9f24b33b418e5838a8d0aeea3, type: 3}
-  cost: 20
+  itemPrefab: {fileID: 8281125147513247472, guid: fbb279e25229d4a608e424179e352b29, type: 3}
+  type: 1
+  icon: {fileID: 21300000, guid: cda2d5fe33d7f7e4ea56204233d84bd2, type: 3}
+  cost: 30
   costType: {fileID: 11400000, guid: 223558ca092e87542a943d5eb0304ffa, type: 2}

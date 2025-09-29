@@ -55,8 +55,16 @@ public class MonkeyStats : MonoBehaviour
         if (stressPercent < 0.1f)
             stressPercent = 0.1f;
 
+        float stressReduce = 1;
+
+        if(StressReducer.stressReducers != null)
+        {
+            foreach (StressReducer reducer in StressReducer.stressReducers)
+                stressReduce *= reducer.stressReduction;
+        }
+
         //manage Stress While working
-        currentStress += stressPerSecond / tickCount;
+        currentStress += stressPerSecond * stressReduce / tickCount;
         if (currentStress < 0)
             currentStress = 0;
         else if (currentStress > maxStress)

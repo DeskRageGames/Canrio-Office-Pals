@@ -74,8 +74,8 @@ public class TaskManager : MonoBehaviour
         
         for(int i = 0; i < taskPlacements.Count; i++)
         {
-
-            taskPlacements[i].parent = taskLocations[i];
+            
+            taskPlacements[i].SetParent(taskLocations[i], false);
 
         }
 
