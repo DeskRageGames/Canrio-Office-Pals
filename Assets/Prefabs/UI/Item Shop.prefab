@@ -391,6 +391,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: b82f8f559f0053c40b995d09eab38efe, type: 2}
   - {fileID: 11400000, guid: 008f90c25f00a4a4c9685c4b0f084b07, type: 2}
   - {fileID: 11400000, guid: 008f90c25f00a4a4c9685c4b0f084b07, type: 2}
+  - {fileID: 11400000, guid: b9a8f5c3944f0a04e858b2db50393596, type: 2}
   categories:
   - type: 0
     icon: {fileID: 10901, guid: 0000000000000000f000000000000000, type: 0}
@@ -400,6 +401,7 @@ MonoBehaviour:
   menuPopup: {fileID: 257568807463782959}
   categoriesParent: {fileID: 1816824162931376506}
   contentParent: {fileID: 8031988109537937326}
+  placeAblesParent: {fileID: 0}
   categoryButtonPrefab: {fileID: 8462446648058892948, guid: d47961cb7d0060246b708416cfa33709, type: 3}
   contentButtonPrefab: {fileID: 737431992162697769, guid: 333f485ff5d877444855be77f0e80e23, type: 3}
   contentHorizontalLayoutPrefab: {fileID: 4611085217587574345, guid: 83ef25f9c6ef536468593fd3de28d544, type: 3}
