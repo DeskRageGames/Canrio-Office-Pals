@@ -12,7 +12,7 @@ public class SpawnMonkey : MonoBehaviour
     public void SpawnObject()
     {
 
-        GameObject.Instantiate(monkey, spawnLocation);
+        Instantiate(monkey, spawnLocation);
 
     }
 }

@@ -12,10 +12,9 @@ public class MonkeyStats : MonoBehaviour
     public float stressPerSecond = 7.5f;
     public float idleStressLower = 10f;
     public float currentStress = 0;
+    public int upgradeCost = 15;
+    public int upgradeMulti = 15;
     [SerializeField] float maxStress = 100;
-
-    [SerializeField] bool idle = false;
-    [SerializeField] bool testing = false;
 
     private MonkeyController monkeyController;
 
@@ -31,6 +30,8 @@ public class MonkeyStats : MonoBehaviour
     {
 
         level++;
+
+        upgradeCost = upgradeMulti * level;
 
         prodPerSecond *= prodGrowth;
 

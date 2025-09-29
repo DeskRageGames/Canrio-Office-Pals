@@ -100,14 +100,14 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   level: 1
-  prodPerSecond: 4
+  prodPerSecond: 10
   prodGrowth: 1.5
-  stressPerSecond: 7.5
+  stressPerSecond: 2.5
   idleStressLower: 10
   currentStress: 0
+  upgradeCost: 15
+  upgradeMulti: 15
   maxStress: 100
-  idle: 0
-  testing: 0
 --- !u!114 &-2352522167588155749
 MonoBehaviour:
   m_ObjectHideFlags: 0

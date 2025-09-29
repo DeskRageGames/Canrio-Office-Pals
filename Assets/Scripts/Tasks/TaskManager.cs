@@ -30,6 +30,8 @@ public class TaskManager : MonoBehaviour
     {
 
         GenerateTask();
+        GenerateTask();
+        GenerateTask();
 
     }
 

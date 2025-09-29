@@ -13,6 +13,8 @@ public class JobSelector : MonoBehaviour
 
     [SerializeField] ButtonInfo[] taskButtons;
 
+    [SerializeField] TMP_Text upgradeCost;
+
     private MonkeyStats selectedMonkey;
 
     bool selectionOpen = false;
@@ -28,6 +30,8 @@ public class JobSelector : MonoBehaviour
         selectionOpen = true;
 
         selectedMonkey = jobSeeker;
+
+        upgradeCost.text = jobSeeker.upgradeCost.ToString();
 
         List<Task> tasks = new List<Task>(ProductivityManager.instance.currentTasks);
 
@@ -68,6 +72,23 @@ public class JobSelector : MonoBehaviour
         ProductivityManager.instance.SetMonkeyToTask(selectedMonkey, taskIndex);
 
         Close();
+
+    }
+
+    public void UpgradeMonkey()
+    {
+
+        if (selectedMonkey.upgradeCost > ResourceBank.instance.Resources[0].amount)
+            return;
+
+        ResourceBank.instance.AddResource(ResourceBank.instance.Resources[0].scriptable, -selectedMonkey.upgradeCost);
+
+        selectedMonkey.UpgradeMonkey();
+
+        upgradeCost.text = selectedMonkey.upgradeCost.ToString();
+
+
+
 
     }
 
